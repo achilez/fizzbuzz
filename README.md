@@ -5,11 +5,7 @@ Test for Senior Software Engineer Application
 
 TASK 1:
 
-Requires: 
-
-fizz-buzz.php 
-
-fizz-buzz-bazz.php
+Requires: index.php, fizz-buzz.php and fizz-buzz-bazz.php
 
 <?php
 
