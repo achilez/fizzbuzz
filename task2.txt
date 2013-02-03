@@ -1,0 +1,53 @@
+Task 2:
+
+Assumptions:
+1. The webserver has been configured correctly to direct the URL specify below to getinfo.php.
+2. The Mysql Server has been configured and running.
+
+Please raise at least 10 suggestions/corrections about these codes.
+
+1. Parse error: syntax error, unexpected ')' in getinfo.php on line 4
+Correction: remove the ')' (see the code below)
+$ArrayURL = split('/', $_SERVER[REQUEST_URI]);
+
+2. Add '"' (double quote) under $_SERVER On getinfo.php line 5 
+Correction: change
+$ArrayURL = split('/', $_SERVER[REQUEST_URI]);
+to
+$ArrayURL = split('/', $_SERVER["REQUEST_URI"]);
+
+3. Error on getinfo.php line 9 
+Correction: on getinfo.php line 9 change
+if (is_object($data) = true)
+to
+if (is_object($data) == true)
+
+4. On getinfo.php line 4 function split deprecated as of PHP verion 5.3.0
+Correction: I advise to use explode or preg_split function instead since the split function has been deprecated.
+
+5. Class "dataObj" not found on getinfo.php line 6 since the classname on data.php was baseObj.
+Correction: change the "dataObj" to "baseObj" in getinfo.php line 6
+
+6. Missing before statement or Syntax error on test.html line 7.
+Correction: Change into <!--//Get the data using ajax//-->
+
+7. 404 not found. Get /getinfo/111 not found on test.html line 10
+Correction: change
+ "/getinfo/111", {},
+to
+ "getinfo.php/111", {},
+ 
+8. Error on importing HDB table in data.sql
+Correction: change "InnoDB" to "MySAM" on data.sql line 18
+
+9. Error on importing Condo table in data.sql
+Correction: change "InnoDB" to "MySAM" on data.sql line 26
+
+10. Incorrect table definition in "Condo" Table; there can be only one auto column and it must be defined as a key
+Correction: on data.sql line 21 change
+"ID BIGINT AUTO_INCREMENT,"
+to
+"ID BIGINT AUTO_INCREMENT PRIMARY KEY,"
+
+
+
